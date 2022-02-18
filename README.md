@@ -1,3 +1,6 @@
+[FRONT END DEPLOYMENT](https://eager-yalow-47b91b.netlify.app)
+[BACK END DEPLOYMENT](https://fast-shore-85795.herokuapp.com)
+
 # PERN Final Project Template
 
 - select `use this template`
