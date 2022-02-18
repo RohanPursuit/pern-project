@@ -18,6 +18,14 @@ products.get("/:id", (request, response) => {
     })
 })
 
+products.post("/", (request, response) => {
+    console.log("post /products")
+    response.status(200).json({
+        success: true,
+        payload: "Why thank you good sir."
+    })
+})
+
 
 
 module.exports = products
