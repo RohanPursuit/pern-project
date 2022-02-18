@@ -34,6 +34,12 @@ products.delete("/:id", (request, response) => {
     })
 })
 
-
+products.put("/:id", (request, response) => {
+    console.log("Put /products/:id")
+    response.status(200).json({
+        success: true,
+        payload: "Oh, ok..."
+    })
+})
 
 module.exports = products
