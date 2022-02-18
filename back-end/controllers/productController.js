@@ -10,4 +10,14 @@ products.get("/", (request, response) => {
     })
 })
 
+products.get("/:id", (request, response) => {
+    console.log("Get /products/:id")
+    response.status(200).json({
+        success: true,
+        payload: "Single Product coming right up"
+    })
+})
+
+
+
 module.exports = products
