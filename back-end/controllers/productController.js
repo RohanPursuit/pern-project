@@ -14,7 +14,7 @@ products.get("/", async (request, response) => {
 
 products.get("/:id", async (request, response) => {
     console.log("Get /products/:id")
-    const products = await getProducts(id)
+    const products = await getProduct(request.params.id)
     if(products.success) return response.status(200).json(products)
     
     //If error status 404
