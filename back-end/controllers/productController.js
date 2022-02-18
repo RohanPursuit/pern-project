@@ -1,16 +1,20 @@
 const express = require("express")
+const {getAllProducts} = require("../queries/products")
 
 const products = express.Router()
 
-products.get("/", (request, response) => {
+products.get("/", async (request, response) => {
     console.log("Get /products")
+    const products = await getAllProducts()
+    //If error status 404
+
     response.status(200).json({
         success: true,
-        payload: "All Products coming right up"
+        payload: products
     })
 })
 
-products.get("/:id", (request, response) => {
+products.get("/:id", async (request, response) => {
     console.log("Get /products/:id")
     response.status(200).json({
         success: true,
@@ -18,7 +22,7 @@ products.get("/:id", (request, response) => {
     })
 })
 
-products.post("/", (request, response) => {
+products.post("/", async (request, response) => {
     console.log("post /products")
     response.status(200).json({
         success: true,
@@ -26,7 +30,7 @@ products.post("/", (request, response) => {
     })
 })
 
-products.delete("/:id", (request, response) => {
+products.delete("/:id", async (request, response) => {
     console.log("Delete /products/:id")
     response.status(200).json({
         success: true,
@@ -34,7 +38,7 @@ products.delete("/:id", (request, response) => {
     })
 })
 
-products.put("/:id", (request, response) => {
+products.put("/:id", async (request, response) => {
     console.log("Put /products/:id")
     response.status(200).json({
         success: true,
