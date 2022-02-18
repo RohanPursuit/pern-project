@@ -26,6 +26,14 @@ products.post("/", (request, response) => {
     })
 })
 
+products.delete("/:id", (request, response) => {
+    console.log("Delete /products/:id")
+    response.status(200).json({
+        success: true,
+        payload: "How dear you..."
+    })
+})
+
 
 
 module.exports = products
