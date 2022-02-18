@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "db:seed": "psql -U postgres -f db/seed.sql",
-    "db:init": "psql -U postgres -f db/schema.sql"
+    "db:init": "psql -U postgres -f db/schema.sql",
+    "db:reset": "psql -U postgres -f db/schema.sql &&psql -U postgres -f db/seed.sql",
+    "db:reset_Prod": "psql -U postgres -f db/schema.sql && psql -U postgres -f db/schema.sql"
   },
   "author": "",
   "license": "ISC",
