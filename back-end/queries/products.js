@@ -15,6 +15,22 @@ const getAllProducts = async () => {
     }
 }
 
+const getProduct = async (id) => {
+    try{
+        const product = db.any("SELECT * FROM test WHERE id=$id", id)
+        return {
+            success: true,
+            payload: product
+        }  
+    } catch (err){
+        return {
+            success: false,
+            payload: err
+        } 
+    }
+}
+
 module.exports = {
-    getAllProducts
+    getAllProducts,
+    getProduct,
 }
