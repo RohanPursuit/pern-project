@@ -1,6 +1,7 @@
 // DEPENDENCIES
 const cors = require("cors");
 const express = require("express");
+const productController = require("./controllers/productController")
 
 // CONFIGURATION
 const app = express();
@@ -8,6 +9,7 @@ const app = express();
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
+app.use("/products", productController)
 
 // ROUTES
 app.get("/", (req, res) => {
