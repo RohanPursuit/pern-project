@@ -2,7 +2,7 @@ const db = require("../db/dbConfig.js")
 
 const getAllProducts = async () => {
     try{
-        const products = db.any("SELECT * FROM test")
+        const products = await db.any("SELECT * FROM products")
         return {
             success: true,
             payload: products
@@ -17,7 +17,7 @@ const getAllProducts = async () => {
 
 const getProduct = async (id) => {
     try{
-        const product = db.any("SELECT * FROM test WHERE id=$id", id)
+        const product = await db.one("SELECT * FROM products WHERE id=$1", id)
         return {
             success: true,
             payload: product
