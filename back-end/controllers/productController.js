@@ -6,12 +6,10 @@ const products = express.Router()
 products.get("/", async (request, response) => {
     console.log("Get /products")
     const products = await getAllProducts()
+    if(products.success) return response.status(200).json(products)
+    
     //If error status 404
-
-    response.status(200).json({
-        success: true,
-        payload: products
-    })
+    response.status(404).json(products)
 })
 
 products.get("/:id", async (request, response) => {
