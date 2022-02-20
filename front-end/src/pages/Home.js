@@ -8,7 +8,8 @@ const videoArr = [epicAd, chevrolet]
 
 function Home() {
     const [featured, setFeatured] = useState([])
-    const [index, setIndex] = useState(0)
+    // const [index, setIndex] = useState(0)
+    const [index] = useState(0)
 
     /**
      * add state for video[]
