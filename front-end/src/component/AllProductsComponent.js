@@ -4,7 +4,6 @@ import {Link} from "react-router-dom"
 const URL = process.env.REACT_APP_API_URL
 
 function AllProductsComponent({setFeatured}){
-    console.log(setFeatured)
     const [products, setProducts] = useState([])
 
     useEffect(() => {
