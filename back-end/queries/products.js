@@ -1,12 +1,21 @@
 const db = require("../db/dbConfig.js")
 
-const getAllProducts = async () => {
+const getAllProducts = async (vid) => {
     try{
-        const products = await db.any("SELECT * FROM products")
-        return {
-            success: true,
-            payload: products
-        }  
+        if(vid !== undefined){
+            const products = await db.any("SELECT * FROM products WHERE vid=$1", vid)
+            return {
+                success: true,
+                payload: products
+            } 
+        }else {
+            const products = await db.any("SELECT * FROM products")
+            return {
+                success: true,
+                payload: products
+            }  
+        }
+        
     } catch (err){
         return {
             success: false,
