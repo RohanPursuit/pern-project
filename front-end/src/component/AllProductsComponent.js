@@ -3,13 +3,17 @@ import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 const URL = process.env.REACT_APP_API_URL
 
-function AllProductsComponent(){
+function AllProductsComponent({setFeatured}){
+    console.log(setFeatured)
     const [products, setProducts] = useState([])
 
     useEffect(() => {
         axios.get(`${URL}/products`)
-        .then(response => {
-            setProducts(response.data.payload)
+        .then(({data}) => {
+            setProducts(data.payload)
+            if(setFeatured !== undefined){
+                setFeatured(data.payload.filter(({featured}) => featured))
+            }
         })
         .catch(console.log)
     }, [])
