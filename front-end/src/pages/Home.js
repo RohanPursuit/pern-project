@@ -1,7 +1,7 @@
 import AllProductsComponent from "../component/AllProductsComponent";
 import chevrolet from "../videos/chevrolet.mp4"
 import epicAd from "../videos/epicAd.mp4"
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import {Link} from "react-router-dom"
 import "../styles/Home.css"
 const videoArr = [epicAd, chevrolet]
@@ -14,13 +14,13 @@ function Home() {
      * add state for video[]
      * OnEnded play next video
      */
-    const playNextAd = () => {
-        if(index < videoArr.length-1){
-            setIndex(index+1)
-        } else {
-            setIndex(0)
-        }
-    }
+    // const playNextAd = () => {
+    //     if(index < videoArr.length-1){
+    //         setIndex(index+1)
+    //     } else {
+    //         setIndex(0)
+    //     }
+    // }
 
     return (
         <div className="Home">
