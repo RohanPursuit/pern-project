@@ -16,7 +16,7 @@ function AllProductsComponent({setFeatured}){
             }
         })
         .catch(console.log)
-    }, [])
+    }, [setFeatured])
 
 
     return (
