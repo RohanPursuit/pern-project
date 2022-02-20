@@ -9,6 +9,15 @@ function NavBar() {
             <Link to="/products">
                 Products
             </Link>
+            <Link to="/cart">
+                Cart
+            </Link>
+            <Link to="/vender/products">
+                My Products
+            </Link>
+            <Link to="/user/signin">
+                Sign In
+            </Link>
         </nav>
     )
 }
