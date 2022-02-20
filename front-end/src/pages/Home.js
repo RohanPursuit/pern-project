@@ -8,20 +8,19 @@ const videoArr = [epicAd, chevrolet]
 
 function Home() {
     const [featured, setFeatured] = useState([])
-    // const [index, setIndex] = useState(0)
-    const [index] = useState(0)
+    const [index, setIndex] = useState(0)
 
     /**
      * add state for video[]
      * OnEnded play next video
      */
-    // const playNextAd = () => {
-    //     if(index < videoArr.length-1){
-    //         setIndex(index+1)
-    //     } else {
-    //         setIndex(0)
-    //     }
-    // }
+    const playNextAd = () => {
+        if(index < videoArr.length-1){
+            setIndex(index+1)
+        } else {
+            setIndex(0)
+        }
+    }
 
     return (
         <div className="Home">
