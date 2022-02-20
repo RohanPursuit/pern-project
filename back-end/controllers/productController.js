@@ -6,8 +6,7 @@ const products = express.Router()
 products.get("/", async (request, response) => {
     console.log("Get /products")
     //check user auth
-
-    const products = await getAllProducts()
+    const products = await getAllProducts(request.query.vid)
     if(products.success) return response.status(200).json(products)
 
     //If error status 404
@@ -44,6 +43,7 @@ products.delete("/:id", async (request, response) => {
 
     //check incoming data types
     if(x = false) return response.status(404).json({x})
+    console.log(request.params.id)
     const product = await deleteProduct(request.params.id)
     if(product.success) return response.status(200).json(product)
     
