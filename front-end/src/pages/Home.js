@@ -1,17 +1,31 @@
 import AllProductsComponent from "../component/AllProductsComponent";
-import video from "../videos/Chevrolet.mp4"
-import {useState} from "react"
+import chevrolet from "../videos/chevrolet.mp4"
+import epicAd from "../videos/epicAd.mp4"
+import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import "../styles/Home.css"
+const videoArr = [epicAd, chevrolet]
 
 function Home() {
     const [featured, setFeatured] = useState([])
+    const [index, setIndex] = useState(0)
+
+    /**
+     * add state for video[]
+     * OnEnded play next video
+     */
+    const playNextAd = () => {
+        if(index < videoArr.length-1){
+            setIndex(index+1)
+        } else {
+            setIndex(0)
+        }
+    }
 
     return (
         <div className="Home">
             <div className="Ad-main">
-                <video src={video} autoPlay muted></video>
-            </div>
+                <video onEnded={playNextAd} src={videoArr[index]} autoPlay muted></video>
             <div className="Featured-main">
                 {featured.map(product=> {
                     return (
@@ -23,6 +37,7 @@ function Home() {
                         </div>
                     )
                 })}
+                </div>
             </div>
             <AllProductsComponent setFeatured={setFeatured}/>
         </div>
