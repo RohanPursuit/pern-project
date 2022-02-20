@@ -25,8 +25,7 @@ function Home() {
     return (
         <div className="Home">
             <div className="Ad-main">
-                {/* onEnded={playNextAd} */}
-                <video src={videoArr[index]} autoPlay muted></video>
+                <video onEnded={playNextAd} src={videoArr[index]} autoPlay muted></video>
             <div className="Featured-main">
                 {featured.map(product=> {
                     return (
