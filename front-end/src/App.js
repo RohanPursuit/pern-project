@@ -4,6 +4,10 @@ import NavBar from "./component/common/NavBar";
 import AllProductsPage from "./pages/AllProductsPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import CartPage from "./pages/CartPage";
+import VendorProductsPage from "./pages/VendorProductsPage";
+import VendorProductDetailsPage from "./pages/VendorProductDetailsPage";
+import CreateProductPage from "./pages/CreateProductPage";
+import EditProductPage from "./pages/EditProductPage";
 import "./App.css"
 
 
@@ -17,6 +21,10 @@ function App() {
         <Route path="/products" element={<AllProductsPage/>}/>
         <Route path="/products/:id" element={<ProductDetailsPage/>}/>
         <Route path="/cart" element={<CartPage/>}/>
+        <Route path="/vendor/products" element={<VendorProductsPage/>}/>
+        <Route path="/vendor/products/create" element={<CreateProductPage/>}/>
+        <Route path="/vendor/products/:id" element={<VendorProductDetailsPage/>}/>
+        <Route path="/vendor/products/:id/edit" element={<EditProductPage/>}/>
       </Routes>
     </div>
   );
