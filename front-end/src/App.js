@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import NavBar from "./component/common/NavBar";
 import AllProductsPage from "./pages/AllProductsPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
+import CartPage from "./pages/CartPage";
 import "./App.css"
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route path="/products" element={<AllProductsPage/>}/>
         <Route path="/products/:id" element={<ProductDetailsPage/>}/>
+        <Route path="/cart" element={<CartPage/>}/>
       </Routes>
     </div>
   );
