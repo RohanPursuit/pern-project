@@ -9,11 +9,10 @@ function ProductDetailsComponent({cart, setCart}){
 
     const handleCart = () => {
         let foundItem = false
-        const newCart = cart.map(cartProduct => {
+        cart.forEach(cartProduct => {
             if(cartProduct.id === product.id){
                 foundItem = true
                 cartProduct.count++
-                return cartProduct
             }
         })
 
