@@ -41,10 +41,10 @@ const getProduct = async (id) => {
 
 const addProduct = async (item) => {
     try {
-        const {name, description, price, onSale, image} = item 
+        const {name, description, price, sale, image, vid} = item 
         const product = await db.one(
-        "INSERT INTO products (name, description, price, onSale, image) VALUES($1, $2, $3, $4, $5) RETURNING *",
-        [name, description, price, onSale, image]
+        "INSERT INTO products (name, description, price, sale, image, vid) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
+        [name, description, price, sale, image, vid]
         );
         return {
             success: true,
@@ -78,10 +78,10 @@ const deleteProduct = async (id) => {
 
 const editProduct = async (id, product) => {
     try {
-        const {name, description, price, onSale, image} = product;
+        const {name, description, price, sale, image} = product;
  
-      const updatedProduct = await db.one("UPDATE Products SET name=$1, description=$2, price=$3, onSale=$4, image=$5  WHERE id=$6 RETURNING *",
-      [name, description, price, onSale, image, id] );
+      const updatedProduct = await db.one("UPDATE Products SET name=$1, description=$2, price=$3, sale=$4, image=$5  WHERE id=$6 RETURNING *",
+      [name, description, price, sale, image, id] );
       return {
         success: true,
         payload: updatedProduct

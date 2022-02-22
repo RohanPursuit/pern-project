@@ -30,6 +30,7 @@ products.post("/", async (request, response) => {
 
     //check incoming data types
     if(x = false) return response.status(404).json({x})
+
     const product = await addProduct(request.body)
     if(product.success) return response.status(200).json(product)
     
