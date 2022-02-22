@@ -1,9 +1,9 @@
 import CartComponent from "../component/CartComponent"
 
-function CartPage() {
+function CartPage({cart}) {
     return(
         <div className="CartPage" style={{paddingLeft: 100 + "px", position: "absolute"}}>
-            <CartComponent/>
+            <CartComponent cart={cart}/>
         </div>
     )
 }
