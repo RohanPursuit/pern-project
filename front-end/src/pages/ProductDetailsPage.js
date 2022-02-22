@@ -1,9 +1,9 @@
 import ProductDetailsComponent from "../component/ProductDetailsComponent";
 
-function ProductDetailsPage(){
+function ProductDetailsPage({cart, setCart}){
     return (
         <div className="AllProductsPage">
-            <ProductDetailsComponent/>
+            <ProductDetailsComponent cart={cart} setCart={setCart}/>
         </div>
     )
 }
