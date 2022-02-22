@@ -1,4 +1,5 @@
 import AllProductsComponent from "../component/AllProductsComponent";
+import "../styles/AllProducts.css"
 
 function AllProductsPage(){
     return (

@@ -19,7 +19,7 @@ function AllProductsComponent({setFeatured}){
 
 
     return (
-        <div className="AllProductsPage">
+        <div className="AllProducts">
             {products.map(product => {
                 return (
                     <div className="Product-card" key={product.id}>

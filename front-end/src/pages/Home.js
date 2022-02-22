@@ -24,22 +24,26 @@ function Home() {
 
     return (
         <div className="Home">
-            <div className="Ad-main">
+            <div className="Video-ad">
+                <div className="grad"></div>
                 <video onEnded={playNextAd} src={videoArr[index]} autoPlay muted></video>
-            <div className="Featured-main">
-                {featured.map(product=> {
-                    return (
-                        <div className="Featured-card" key={product.id}>
-                            <Link to={"/products/" + product.id}>
-                                <h4>{product.name}</h4>
-                                <img src={product.image} alt={product.description} />
-                            </Link>
-                        </div>
-                    )
-                })}
-                </div>
             </div>
-            <AllProductsComponent setFeatured={setFeatured}/>
+            <div className="Home-content">
+                <div className="Featured-main">
+                    {featured.map(product=> {
+                        return (
+                            <div className="Featured-card" key={product.id}>
+                                <Link to={"/products/" + product.id}>
+                                    <h4>{product.name}</h4>
+                                    <img src={product.image} alt={product.description} />
+                                </Link>
+                            </div>
+                        )
+                    })}
+                </div>
+                <AllProductsComponent setFeatured={setFeatured}/>
+            </div>
+            
         </div>
     )
 }
