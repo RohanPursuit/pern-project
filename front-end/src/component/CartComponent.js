@@ -1,11 +1,8 @@
-import axios from "axios"
 // import {useState, useEffect} from "react"
-import {useState, useEffect} from "react"
-const URL = process.env.REACT_APP_API_URL
+import {useState} from "react"
 
 function CartComponent({cart}) {
     // const [cart, setCart] = useState([])
-    const [total, setTotal] = useState(0)
 
     // useEffect(() => {
     //     axios.get(`${URL}/cart`)
