@@ -8,19 +8,21 @@ import VendorProductsPage from "./pages/VendorProductsPage";
 import VendorProductDetailsPage from "./pages/VendorProductDetailsPage";
 import CreateProductPage from "./pages/CreateProductPage";
 import EditProductPage from "./pages/EditProductPage";
+import {useState} from "react"
 import "./App.css"
 
 
 
 function App() {
+  const [cart, setCart] = useState([])
   return (
     <div className="App">
       <NavBar/>
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route path="/products" element={<AllProductsPage/>}/>
-        <Route path="/products/:id" element={<ProductDetailsPage/>}/>
-        <Route path="/cart" element={<CartPage/>}/>
+        <Route path="/products/:id" element={<ProductDetailsPage cart={cart} setCart={setCart}/>}/>
+        <Route path="/cart" element={<CartPage cart={cart} />}/>
         <Route path="/vendor/products" element={<VendorProductsPage/>}/>
         <Route path="/vendor/products/create" element={<CreateProductPage/>}/>
         <Route path="/vendor/products/:id" element={<VendorProductDetailsPage/>}/>
