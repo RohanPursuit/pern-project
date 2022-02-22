@@ -53,4 +53,7 @@ export default App;
  * Would like to allow venders to upload images of their product
  * Noted use google drive
  * 
+ * 
+ * Maybe add default reviews
+ * have the ability to change reviews as a single user
  */
