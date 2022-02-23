@@ -1,4 +1,5 @@
 import ProductDetailsComponent from "../component/ProductDetailsComponent";
+import "../styles/ProductDetail.css"
 
 function ProductDetailsPage({cart, setCart}){
     return (
