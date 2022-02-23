@@ -45,7 +45,6 @@ export default App;
 
 
 /**
- * 1.5 Style NavBar
  * 2. style large product card with full info - homepage, product page, vender
  *  product page
  * 3. style single product info
