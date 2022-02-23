@@ -1,4 +1,4 @@
-import AllProductsComponent from "../component/AllProductsComponent";
+// import AllProductsComponent from "../component/AllProductsComponent";
 import chevrolet from "../videos/chevrolet.mp4"
 import epicAd from "../videos/epicAd.mp4"
 import {useState, useEffect} from "react"
@@ -45,7 +45,7 @@ function Home() {
                 <div className="Featured-main">
                     {featured.map(product=> {
                         return (
-                            <Card.Link className="Featured-card" to={"/products/" + product.id} key={product.id}>
+                            <Link className="Featured-card" to={"/products/" + product.id} key={product.id}>
                                 <Card >
                                     <Card.Body>
                                     <Card.Title>{product.name}</Card.Title>
@@ -55,7 +55,7 @@ function Home() {
                                     </Ratio>
                                     
                                 </Card>
-                            </Card.Link>
+                            </Link>
                         )
                     })}
                 </div>

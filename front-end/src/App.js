@@ -45,8 +45,6 @@ export default App;
 
 
 /**
- * todo after lunch
- * 1. commit all changes
  * 1.5 Style NavBar
  * 2. style large product card with full info - homepage, product page, vender
  *  product page
