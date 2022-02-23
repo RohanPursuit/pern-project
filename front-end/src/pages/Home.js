@@ -1,9 +1,13 @@
 import AllProductsComponent from "../component/AllProductsComponent";
 import chevrolet from "../videos/chevrolet.mp4"
 import epicAd from "../videos/epicAd.mp4"
-import {useState} from "react"
+import {useState, useEffect} from "react"
+import axios from 'axios'
 import {Link} from "react-router-dom"
+import Card from "react-bootstrap/Card"
+import Ratio from "react-bootstrap/Ratio"
 import "../styles/Home.css"
+const URL = process.env.REACT_APP_API_URL
 const videoArr = [epicAd, chevrolet]
 
 function Home() {
@@ -22,6 +26,15 @@ function Home() {
         }
     }
 
+    useEffect(() => {
+        axios.get(`${URL}/products`)
+        .then(({data}) => {
+            console.log(data)
+            setFeatured(data.payload.filter(({featured}) => featured))
+        })
+        .catch(console.log)
+    }, [setFeatured])
+
     return (
         <div className="Home">
             <div className="Video-ad">
@@ -32,16 +45,21 @@ function Home() {
                 <div className="Featured-main">
                     {featured.map(product=> {
                         return (
-                            <div className="Featured-card" key={product.id}>
-                                <Link to={"/products/" + product.id}>
-                                    <h4>{product.name}</h4>
-                                    <img src={product.image} alt={product.description} />
-                                </Link>
-                            </div>
+                            <Card.Link className="Featured-card" to={"/products/" + product.id} key={product.id}>
+                                <Card >
+                                    <Card.Body>
+                                    <Card.Title>{product.name}</Card.Title>
+                                    </Card.Body>
+                                    <Ratio aspectRatio="1x1">
+                                    <Card.Img variant="top" src={product.image} alt={product.description} />
+                                    </Ratio>
+                                    
+                                </Card>
+                            </Card.Link>
                         )
                     })}
                 </div>
-                <AllProductsComponent setFeatured={setFeatured}/>
+                {/* <AllProductsComponent setFeatured={setFeatured}/> */}
             </div>
             
         </div>
