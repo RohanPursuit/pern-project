@@ -1,8 +1,9 @@
 import CreateProductComponent from "../component/CreateProductComponent"
+import "../styles/CreateForm.css"
 
 function CreateProductPage () {
     return (
-        <div className="CreateProductPage" style={{paddingLeft: 100 + "px"}}>
+        <div className="CreateProductPage">
             <CreateProductComponent/>
         </div>
     )
