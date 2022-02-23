@@ -1,12 +1,20 @@
+body {
+	background-color: rgb(34, 42, 56);
+}
+
 .App {
 	padding: 0px;
 	margin: 0px;
-	background-color: rgb(184, 184, 184);
+	background-color: rgb(22, 33, 51);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 .Nav {
-	background: rgb(78, 78, 78);
+	background: rgb(16, 29, 51);
 	position: fixed;
+	position: relative;
+	grid-column: span 1;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -14,6 +22,23 @@
 	z-index: 100;
 }
 
+.Route-content {
+	grid-column: span 1;
+}
+
 .Nav:hover {
 	width: 80px;
+}
+
+@media all and (max-width: 600px) {
+	.Nav {
+		position: relative;
+		flex-direction: row;
+		height: 50px;
+		width: 100vw;
+		grid-column: span 2;
+	}
+	.Route-content {
+		grid-column: span 1;
+	}
 }
