@@ -1,0 +1,22 @@
+.EditProductPage {
+}
+
+.EditProduct {
+	position: relative;
+	top: 50px;
+	margin: auto;
+	width: 75%;
+	padding: 20px;
+	border-radius: 5px;
+	border: 3px solid rgb(245, 245, 245);
+	background-color: white;
+}
+
+.EditProduct label {
+	position: relative;
+	left: 50px;
+	top: 20px;
+	background-color: white;
+	color: rgb(133, 133, 133);
+	z-index: 20;
+}
