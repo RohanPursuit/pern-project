@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState, useEffect} from "react"
 import {Link, useParams, useNavigate} from "react-router-dom"
+import Ratio from "react-bootstrap/Ratio"
 const URL = process.env.REACT_APP_API_URL
 
 function VendorProductDetailsComponent () {
@@ -26,7 +27,9 @@ function VendorProductDetailsComponent () {
 
     return (
         <div className="Product-details" style={{paddingLeft: 100 + "px"}}>
-            <img src={product.image} alt={product.description} />
+            <Ratio aspectRatio="1x1">
+                <img src={product.image} alt={product.description} />
+            </Ratio>
             <p>{product.name}</p>
             <p>{product.rating}</p>
             <p>{product.description}</p>
