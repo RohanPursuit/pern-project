@@ -1,9 +1,10 @@
 import CartComponent from "../component/CartComponent"
+import "../styles/Cart.css"
 
-function CartPage({cart}) {
+function CartPage({cart, setCart}) {
     return(
-        <div className="CartPage" style={{paddingLeft: 100 + "px", position: "absolute"}}>
-            <CartComponent cart={cart}/>
+        <div className="CartPage">
+            <CartComponent cart={cart} setCart={setCart}/>
         </div>
     )
 }
