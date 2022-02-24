@@ -1,9 +1,12 @@
 import axios from "axios";
 import {useState, useEffect} from "react"
-import {useParams} from "react-router-dom"
+import {useParams, useNavigate} from "react-router-dom"
+import Card from "react-bootstrap/Card"
+import Button from "react-bootstrap/Button"
 const URL = process.env.REACT_APP_API_URL
 
 function ProductDetailsComponent({cart, setCart}){
+    const nav = useNavigate()
     const {id} = useParams()
     const [product, setProduct] = useState({})
 
@@ -33,14 +36,23 @@ function ProductDetailsComponent({cart, setCart}){
 
 
     return (
-        <div className="Product-details">
-            <img src={product.image} alt={product.description} />
-            <p>{product.name}</p>
-            <p>{product.rating}</p>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-            <button onClick={handleCart}>Add to cart</button>
-        </div>
+        <Card className="Product-details" style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={product.image} />
+        <Card.Body>
+          <Card.Title>{product.name}</Card.Title>
+          <Card.Text>
+          Price: ${Number(product.price).toFixed(2)}
+          </Card.Text>
+          <Card.Text>
+          Description: {product.description}
+          </Card.Text>
+          <Card.Text>
+          Rating: {product.rating}
+          </Card.Text>
+          <Button onClick={handleCart} variant="primary">Add to cart</Button>
+          <Button onClick={()=> nav(-1)} style={{marginLeft: 80 +"px"}}>Back</Button>
+        </Card.Body>
+      </Card>
     )
 }
 
