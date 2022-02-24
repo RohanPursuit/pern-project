@@ -37,9 +37,14 @@ video {
 	display: flex;
 	flex-direction: row;
 	overflow-x: auto;
+	overflow-y: hidden;
 	width: 100vw;
 	height: fit-content;
 	z-index: 30;
+}
+
+::-webkit-scrollbar {
+	background: transparent;
 }
 
 .Featured-card {
@@ -48,13 +53,18 @@ video {
 }
 
 .Featured-card .card {
-	background-color: rgb(255, 255, 255);
+	background-color: #212529;
 	margin-bottom: 5px;
-	min-width: 23vw;
-	min-height: 22vw;
+	min-width: 20vw;
+	min-height: 19vw;
 	text-align: center;
 	max-height: fit-content;
 	font-size: 1.5vw;
+}
+
+.Featured-card {
+	text-decoration: none;
+	color: #999c9e;
 }
 
 .Featured-card .card div {
@@ -63,7 +73,7 @@ video {
 }
 
 .Featured-card .card img {
-	padding: 5px;
+	padding: 0px;
 }
 
 /* .Featured-card a img {
@@ -78,6 +88,23 @@ video {
 	background-color: rgb(184, 184, 184);
 }
 
+.Home .AllProducts {
+	position: relative;
+	top: 33vw;
+}
+
+@media all and (max-width: 900px) {
+	.Home .AllProducts {
+		position: relative;
+		top: 25vw;
+	}
+}
+@media all and (max-width: 700px) {
+	.Home .AllProducts {
+		position: relative;
+		top: 19vw;
+	}
+}
 /* @media all and (max-width: 1283px) {
 	.Featured-main {
 		height: 35vw;
