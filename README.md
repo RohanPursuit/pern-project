@@ -1,6 +1,28 @@
 [FRONT END DEPLOYMENT](https://eager-yalow-47b91b.netlify.app)
 [BACK END DEPLOYMENT](https://fast-shore-85795.herokuapp.com)
 
+# VVEN Store App
+
+## What is it about?
+
+- The VVEN Store app is a place where shoppers and sellers alike can can have a wonderful and unique shopping experience.
+- Community members can see a list of products
+- Community members can click on a product and see product details
+- Community members who are also vendors can add new products on their own through the websites user interface
+- Community members who are also vendors can also edit their products using the website interface.
+- Vendors can delete a product if they are now longer available
+  A user can visit this app from a provided ULR on the internet that uses data from the express API
+- Advertisers can also pay for ad space to run different types of ads (ex. video ads)
+
+## Bonus Features
+
+- Using Bootstrap to achieve a responsive mobile and desktop design
+- Added front end Cart that Community members can view before they checkout
+
+## Additional Stretch Features
+
+- Users in the VVEN community will be able to interact with each other in multiple ways. An example of this is that is that user and vendors alike can bid on items that having been delivered yet. The original buyer will be able to accept the highest bid, if they the choose to do so the item will be delivered to the highest bider.
+
 # PERN Final Project Template
 
 - select `use this template`
