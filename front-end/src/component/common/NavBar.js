@@ -1,56 +1,32 @@
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import Container from "react-bootstrap/Container"
+import {Link} from "react-router-dom"
 
 function NavBar() {
     return (
         <Navbar collapseOnSelect fixed="top" expand="sm" bg="dark" variant="dark">
             <Container className="Nav">
-            <Nav.Link className="Logo" href="/">
+            <Nav.Link className="Logo" as={Link} to="/">
                 VVEN
             </Nav.Link>
                 <Navbar.Toggle/>
                 <Navbar.Collapse>
                     <Nav>
-                    <Nav.Link href="/products">
+                    <Nav.Link as={Link} to="/products">
                          Products
                     </Nav.Link>
-                    <Nav.Link href="/cart">
+                    <Nav.Link as={Link} to="/cart">
                          Cart
                     </Nav.Link>
-                    <Nav.Link href="/vendor/products">
+                    <Nav.Link as={Link} to="/vendor/products">
                          My Products
                     </Nav.Link>
-                    <Nav.Link href="/user/signin">
-                         Sign In
-                     </Nav.Link>  
                     </Nav>
                 </Navbar.Collapse>
                 
             </Container>
         </Navbar>
-        // <nav className="Nav">
-        //     <Link className="Logo" to="/">
-        //         VVEN
-        //     </Link>
-        //     <DropDown>
-        //     <DropDown.Toggle><List/></DropDown.Toggle>
-        //     <DropDown.Menu>
-        //     <Link className="Products" to="/products">
-        //         Products
-        //     </Link>
-        //     <Link className="Cart" to="/cart">
-        //         Cart
-        //     </Link>
-        //     <Link className="Vender-products" to="/vendor/products">
-        //         My Products
-        //     </Link>
-        //     <Link className="Sign In" to="/user/signin">
-        //         Sign In
-        //     </Link>
-        //     </DropDown.Menu>
-        //     </DropDown>
-        // </nav>
     )
 }
 
