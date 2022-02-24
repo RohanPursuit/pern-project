@@ -1,12 +1,14 @@
 import VendorProductsComponent from "../component/VendorProductsComponent"
 import {Link} from "react-router-dom"
+import Button from "react-bootstrap/Button"
+import "../styles/VendorProducts.css"
 
 function VendorProductsPage () {
     return(
-        <div className="VendorProductsPage" style={{paddingLeft: 100 + "px"}}>
-            <Link to="/vendor/products/create">
+        <div className="VendorProductsPage">
+            <Button as={Link} className="VendorProducts-create" to="/vendor/products/create">
                 Create
-            </Link>
+            </Button>
            <VendorProductsComponent/> 
         </div>
     )
