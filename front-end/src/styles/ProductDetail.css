@@ -1,8 +1,11 @@
-.AllProductsPage {
+.ProductDetailsPage {
+	height: 100vh;
 }
 
 .Product-details {
 	margin: auto;
-	height: 200px;
-	width: 500px;
+	position: relative;
+	top: 120px;
+	/* height: 200px;
+	width: 500px; */
 }
