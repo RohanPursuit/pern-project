@@ -3,7 +3,7 @@ import "../styles/ProductDetail.css"
 
 function ProductDetailsPage({cart, setCart}){
     return (
-        <div className="AllProductsPage">
+        <div className="ProductDetailsPage">
             <ProductDetailsComponent cart={cart} setCart={setCart}/>
         </div>
     )
