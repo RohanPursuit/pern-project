@@ -1,4 +1,4 @@
-// import AllProductsComponent from "../component/AllProductsComponent";
+import AllProductsComponent from "../component/AllProductsComponent";
 import chevrolet from "../videos/chevrolet.mp4"
 import epicAd from "../videos/epicAd.mp4"
 import {useState, useEffect} from "react"
@@ -29,7 +29,6 @@ function Home() {
     useEffect(() => {
         axios.get(`${URL}/products`)
         .then(({data}) => {
-            console.log(data)
             setFeatured(data.payload.filter(({featured}) => featured))
         })
         .catch(console.log)
@@ -59,7 +58,7 @@ function Home() {
                         )
                     })}
                 </div>
-                {/* <AllProductsComponent setFeatured={setFeatured}/> */}
+                <AllProductsComponent setFeatured={setFeatured}/>
             </div>
             
         </div>
