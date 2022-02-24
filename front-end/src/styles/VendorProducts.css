@@ -1,0 +1,26 @@
+.VendorProducts-create {
+	position: relative;
+	top: 110px;
+}
+
+.VendorProducts .card {
+	text-decoration: none;
+}
+
+.VendorProducts .card {
+	color: white;
+	background-color: #212529;
+	position: relative;
+	top: 110px;
+	padding: 0px;
+	max-height: 400px;
+	min-height: 250px;
+	margin-bottom: 10px;
+}
+
+.VendorProducts-img {
+	margin-left: 10px;
+	margin-top: 10px;
+	max-width: 300px;
+	max-height: 300px;
+}
