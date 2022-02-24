@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route path="/products" element={<AllProductsPage/>}/>
         <Route path="/products/:id" element={<ProductDetailsPage cart={cart} setCart={setCart}/>}/>
-        <Route path="/cart" element={<CartPage cart={cart} />}/>
+        <Route path="/cart" element={<CartPage cart={cart} setCart={setCart}/>}/>
         <Route path="/vendor/products" element={<VendorProductsPage/>}/>
         <Route path="/vendor/products/create" element={<CreateProductPage/>}/>
         <Route path="/vendor/products/:id" element={<VendorProductDetailsPage/>}/>
@@ -45,10 +45,17 @@ export default App;
 
 
 /**
- * 2. style large product card with full info - homepage, product page, vender
- *  product page
- * 3. style single product info
- * 4. Cart page, style and receipt -- with some checkout conformation-- should
+ * 
+ * cart is broken - problem found Bootstrap Nav.Link refreshes page losing 
+ * cart state on refresh
+ * 
+ * cart is empties when App loads - problem found Bootstrap Nav.Link refreshes 
+ * page losing cart state on refresh
+ * 
+ * issues with app/body backgrounds.... or all backgrounds
+ * 
+ * 
+ * 4. Cart page, remove items style and receipt -- with some checkout conformation-- should
  * clear cart after checkout
  * 5. Dummy sign In page
  * 
@@ -58,6 +65,7 @@ export default App;
  * 
  * Didn't create recording.
  * Don't have readme
+ * 
  * 
  * 
  * Include a last Item feature where if the item that a customer wants to buy 
@@ -74,4 +82,10 @@ export default App;
  * 
  * Maybe add default reviews
  * have the ability to change reviews as a single user
+ * 
+ * 
+ * add Bonus feature in README
+ * 
+ * Add Goals to README
+ * 
  */
